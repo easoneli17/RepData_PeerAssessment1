@@ -2,7 +2,9 @@
 title: "PA1_template"
 author: "Elizabeth Eason"
 date: "February 8, 2017"
-output: html_document
+output: 
+  html_document: 
+    keep_md: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -32,7 +34,6 @@ hist(totstep[,2], main="Histogram of total number of steps per day", xlab="Steps
 mean(totstep[,2])
 median(totstep[,2])
 ```
-Thus, the mean is 10766.19 steps per day, and the median is 10765 steps per day.
 
 ##Graphing mean number of steps per interval
 ```{r}
@@ -47,13 +48,10 @@ plot(meanstep[,2],type="l",main="Mean Steps by Interval", ylab="Mean Number of S
 meanstep[max(meanstep[,2]),]
 ```
 
-Therefore, the maximum mean number of steps per day is 56.30189, which occurs at interval 1705.
-
 ##Number of rows with NA entries
 ```{r}
 sum(!complete.cases(fit))
 ```
-There are 2304 rows with NA entries.
 
 ##Imputing the Data
 
@@ -99,7 +97,7 @@ mean(totstep2[,2])
 median(totstep2[,2])
 ```
 
-Thus, the mean and median of the imputed data is 10766.19. Notice that in relation to the original mean and median, the mean remained the same, and the median is now equal to the mean. Further, from the histogram we can see that this data has much smaller variance. Thus, the effect of imputing data with means makes the data have a much smaller variance.
+Notice that in relation to the original mean and median, the mean remained the same, and the median is now equal to the mean. Further, from the histogram we can see that this data has much smaller variance. Thus, the effect of imputing data with means makes the data have a much smaller variance.
 
 ##Making a weekend indicator:
 ```{r}
